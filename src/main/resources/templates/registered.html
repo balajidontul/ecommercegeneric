@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Successful</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#f4f6f9;
+        }
+
+        .success-container{
+            width:400px;
+            background:white;
+            padding:40px;
+            border-radius:12px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+
+        .success-icon{
+            font-size:60px;
+            color:green;
+            margin-bottom:20px;
+        }
+
+        h2{
+            color:#333;
+            margin-bottom:15px;
+        }
+
+        p{
+            color:#666;
+            margin-bottom:25px;
+        }
+
+        .login-btn{
+            display:inline-block;
+            padding:12px 20px;
+            background:#007bff;
+            color:white;
+            text-decoration:none;
+            border-radius:6px;
+            transition:0.3s;
+        }
+
+        .login-btn:hover{
+            background:#0056b3;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="success-container">
+
+    <div class="success-icon">
+        ✓
+    </div>
+
+    <h2>Registration Successful</h2>
+
+    <p>
+        Your account has been created successfully.
+    </p>
+
+    <a th:href="@{/login}" class="login-btn">
+        Go To Login
+    </a>
+
+</div>
+
+</body>
+</html>
