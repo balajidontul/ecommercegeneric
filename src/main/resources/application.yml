@@ -8,33 +8,18 @@ spring:
     password: admin
     driver-class-name: org.postgresql.Driver
 
+
+  sql:
+    init:
+      mode: always
+
+
   jpa:
+    defer-datasource-initialization: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate:
         format_sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-
-  security:
-    oauth2:
-      client:
-        registration:
-          okta:
-            client-id: DQZgoY0gVeprVlvFj4Zk9h6OwGkDgMdk
-            client-secret: 5oshyuIy8BTfduC9bTwwnLM_OpK0t28G29Lg8aa-aAg96KAjtuXiYY-kKFnH0Bue
-            scope:
-              - openid
-              - profile
-              - email
-
-        provider:
-          okta:
-            issuer-uri: https://dev-kxc02is56pb8nq73.us.auth0.com/
-
-      resourceserver:
-        jwt:
-          issuer-uri: https://dev-kxc02is56pb8nq73.us.auth0.com/
-
-kind: Application
